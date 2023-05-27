@@ -19,6 +19,7 @@ const uint8_t celsius[] = {
   SEG_A | SEG_B | SEG_F | SEG_G,  // Circle
   //SEG_A | SEG_D | SEG_E | SEG_F   // C
 };
+const int offset=10;
 int wishtemp=0;
 int wish=0;//temperatura deseada
 float temperatura=0; //Se crea una variable flotante para almacenar la temperatura
@@ -44,7 +45,7 @@ void setup() {
 
 void loop() {  
 
-if(temperatura<wishtemp)
+if(temperatura<(wishtemp-offset))
 {
   digitalWrite(ssr, HIGH);
 }
